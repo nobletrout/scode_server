@@ -7,7 +7,7 @@ port=80
 rm -f phil
 mkfifo phil
 
-if ["$port" -lt "1024"]
+if [ "$port" -lt "1024" ]
 then
     echo 'running as root'
     dosudo='sudo'

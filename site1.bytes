@@ -1,0 +1,5 @@
+HTTP/1.0 200 OK
+Content-Length: 111
+Mime-Type: text/html
+
+<HTML><HEAD><TITLE>website 1</TITLE></HEAD><BODY>Go to <a href='http://google.com'>google.com</a></BODY></HTML>

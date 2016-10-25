@@ -9,8 +9,10 @@ mkfifo phil
 
 if ["$port" -lt "1024"]
 then
+    echo 'running as root'
     dosudo='sudo'
 else
+    echo 'not running as root'
     dosudo=''
 fi
 

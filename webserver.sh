@@ -3,12 +3,20 @@
 # use gzip compression and embedded images ftw
 site1="example.com"
 site2="example.net"
+port=80
 rm -f phil
-
 mkfifo phil
+
+if ["$port" -lt "1024"]
+then
+    dosudo='sudo'
+else
+    dosudo=''
+fi
+
 while (`true`)
   do
-  sudo nc -w 7 -l -p 80 < phil | grep --line-buffered 'Host: .*' | 
+  $dosudo nc -w 7 -l -p 80 < phil | grep --line-buffered 'Host: .*' | 
   awk -v site1="$site1" -v site2="$site2" '{ 
                          if (match($0,site1)) 
                             {system("cat site1.bytes"); exit 0} 

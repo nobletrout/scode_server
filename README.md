@@ -1,6 +1,6 @@
 # scode_server
 ## what is is?
-A shell code based webserver
+A shell script based webserver
 ## when should I use it?
 This should never be used.
 ## How do it work?
